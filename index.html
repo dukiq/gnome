@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gnome Browser Start</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('wallpaper.png') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            color: white;
+        }
+        .search-bar {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 50px;
+            padding: 20px;
+            width: 400px;
+            font-size: 24px;
+        }
+        .search-bar img {
+            width: 32px;
+            height: 32px;
+            margin-right: 20px;
+        }
+        .search-bar input {
+            width: 100%;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="search-bar">
+        <img src="https://www.google.com/favicon.ico" alt="Google">
+        <input type="text" placeholder="Search with Google" id="search-input">
+    </div>
+
+    <script>
+        const searchInput = document.getElementById('search-input');
+        searchInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(searchInput.value);
+            }
+        });
+    </script>
+</body>
+</html>
